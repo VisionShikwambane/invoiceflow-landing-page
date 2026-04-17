@@ -1,6 +1,6 @@
-# Invoicewave Landing Page
+# Invoiceserve Landing Page
 
-Static landing page for **Invoicewave** — a simple invoicing tool built for South African freelancers, contractors, and small businesses.
+Static landing page for **Invoiceserve** — a simple invoicing tool built for South African freelancers, contractors, and small businesses.
 
 ## Quick Start
 
@@ -34,4 +34,4 @@ This is a static site — deploy anywhere:
 
 ## Related
 
-The main Invoicewave Angular app lives at [InvoicyUI](https://github.com/VisionShikwambane/InvoicyUI).
+The main Invoiceserve Angular app lives at [InvoicyUI](https://github.com/VisionShikwambane/InvoicyUI).
