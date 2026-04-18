@@ -5,14 +5,14 @@ html {
 }
 
 :root {
-  --bg: #f8f9ff;
+  --bg: #f0fdfa;
   --surface: #ffffff;
   --text: #0f172a;
   --muted: #475569;
   --line: #e2e8f0;
-  --primary: #6d28d9;
-  --primary-strong: #5b21b6;
-  --primary-soft: #f3e8ff;
+  --primary: #14b8a6;
+  --primary-strong: #0d9488;
+  --primary-soft: #ccfbf1;
   --teal: #0f766e;
   --green: #15803d;
   --coral: #dc2626;
@@ -29,7 +29,7 @@ body {
   margin: 0;
   font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
   color: var(--text);
-  background: radial-gradient(circle at top, #eef2ff, var(--bg) 45%);
+  background: radial-gradient(circle at top, #ccfbf1, var(--bg) 45%);
   line-height: 1.6;
 }
 
@@ -65,7 +65,7 @@ nav {
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.55);
   backdrop-filter: blur(10px);
-  background: rgba(248, 250, 255, 0.88);
+  background: rgba(240, 253, 250, 0.88);
   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
   display: flex;
   align-items: center;
@@ -116,9 +116,9 @@ nav {
   padding: 0.4rem 0.85rem;
   border-radius: 999px;
   font-size: 0.86rem;
-  color: var(--primary-strong);
+  color: var(--teal);
   background: var(--primary-soft);
-  border: 1px solid #e9d5ff;
+  border: 1px solid #99f6e4;
 }
 
 .hero-badge-dot {
@@ -172,7 +172,7 @@ nav {
 .btn-solid {
   background: var(--primary);
   color: #fff;
-  box-shadow: 0 10px 20px rgba(109, 40, 217, 0.24);
+  box-shadow: 0 10px 20px rgba(20, 184, 166, 0.24);
 }
 
 .btn-primary:hover,
@@ -348,9 +348,9 @@ nav {
 
 .section-label {
   display: inline-block;
-  color: var(--primary-strong);
+  color: var(--teal);
   background: var(--primary-soft);
-  border: 1px solid #e9d5ff;
+  border: 1px solid #99f6e4;
   border-radius: 999px;
   padding: 0.35rem 0.75rem;
   font-size: 0.8rem;
@@ -403,7 +403,7 @@ nav {
   border-radius: 10px;
   display: grid;
   place-items: center;
-  background: #eef2ff;
+  background: #ccfbf1;
   margin-bottom: 0.7rem;
 }
 
@@ -462,7 +462,7 @@ blockquote {
 }
 
 .av-purple {
-  background: #7c3aed;
+  background: #14b8a6;
 }
 
 .av-teal {
@@ -563,7 +563,7 @@ blockquote {
 
 .fi-purple {
   color: var(--primary);
-  background: #f3e8ff;
+  background: #ccfbf1;
 }
 
 .fi-green {
@@ -636,9 +636,9 @@ blockquote {
 
 .cta {
   margin-bottom: 4rem;
-  background: linear-gradient(135deg, #ede9fe, #eef2ff);
+  background: linear-gradient(135deg, #ccfbf1, #f0fdfa);
   border-radius: var(--radius);
-  border: 1px solid #ddd6fe;
+  border: 1px solid #99f6e4;
   padding: 1.5rem;
   text-align: center;
 }
