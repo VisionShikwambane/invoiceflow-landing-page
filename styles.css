@@ -1138,8 +1138,8 @@ footer {
 }
 .demo-slide-inner {
   display: grid;
-  grid-template-columns: 1.55fr 1fr;
-  gap: 2rem;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
   align-items: start;
   text-align: left;
 }
@@ -1242,8 +1242,14 @@ footer {
 }
 
 /* Slide info panel */
-.demo-slide-info { padding: 0.5rem 0; }
+.demo-slide-info {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.25rem 2.5rem;
+  align-items: start;
+}
 .demo-slide-phase-tag {
+  grid-column: 1 / -1;
   display: inline-block;
   padding: 0.28rem 0.7rem;
   border-radius: 999px;
@@ -1270,10 +1276,13 @@ footer {
 }
 .demo-slide-perks {
   list-style: none;
-  margin: 1rem 0 0;
+  margin: 0;
   padding: 0;
   display: grid;
   gap: 0.5rem;
+  grid-column: 2;
+  grid-row: 2 / 4;
+  align-self: center;
 }
 .demo-slide-perks li {
   font-size: 0.88rem;
@@ -1344,10 +1353,21 @@ footer {
 /* Demo responsive */
 @media (max-width: 820px) {
   .demo-slide-inner { grid-template-columns: 1fr; }
-  .demo-slide-info  { padding-top: 0; }
+  .demo-slide-info  { grid-template-columns: 1fr; }
+  .demo-slide-perks { grid-column: auto; grid-row: auto; }
 }
 @media (max-width: 640px) {
-  .demo-inner        { padding: 2rem 1rem 1.25rem; }
+  /* Section goes full-width — no side gutters eating screenshot space */
+  .demo-section      { width: 100%; }
+  .demo-inner        { padding: 1.5rem 0.75rem 1.25rem; border-radius: 0; }
+  /* Screenshot breaks out of inner padding → edge-to-edge */
+  .demo-screen-wrap  {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
   .demo-steps        { gap: 0.35rem; }
   .demo-step-label   { display: none; }
   .demo-step-pill    { padding: 0.45rem; border-radius: 50%; }
