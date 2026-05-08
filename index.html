@@ -6,52 +6,118 @@
   <meta name="description" content="Invoiceserve — Create beautiful, professional invoices in minutes and get paid faster. Built for South African freelancers, contractors, and small businesses.">
   <meta property="og:title" content="Invoiceserve — Invoice in minutes. Get paid faster.">
   <meta property="og:description" content="Stop wrestling with spreadsheets. Create professional invoices and send them before your client forgets. Built for South African freelancers.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#14b8a6">
   <title>Invoiceserve — Invoice in minutes. Get paid faster.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
-  <div class="logo">Invoice<span>serve</span></div>
+<nav id="navbar">
+  <a href="#" class="logo" aria-label="Invoiceserve home">Invoice<span>serve</span></a>
   <div class="nav-links">
     <a href="#features">Features</a>
+    <a href="#how">How it works</a>
     <a href="#pricing">Pricing</a>
     <a href="#faq">FAQ</a>
     <a href="https://app.invoiceserve.co.za" class="btn-nav">Get started free</a>
   </div>
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu">
+  <a href="#features">Features</a>
+  <a href="#how">How it works</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#faq">FAQ</a>
+  <a href="https://app.invoiceserve.co.za" class="btn-nav-mobile">Get started free →</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-badge"><span class="hero-badge-dot"></span>Trusted by 100+ South African freelancers</div>
-  <h1>Invoice in minutes.<br><em>Get paid</em> faster.</h1>
-  <p>Stop wrestling with spreadsheets. Create beautiful, professional invoices and send them before your client forgets.</p>
-  <div class="hero-actions">
-    <a href="https://app.invoiceserve.co.za" class="btn-primary">Create your first invoice — free</a>
-    <a href="#features" class="btn-ghost">See how it works →</a>
+  <div class="hero-content">
+    <div class="hero-badge" data-reveal><span class="hero-badge-dot"></span>Trusted by 100+ South African freelancers</div>
+    <h1 data-reveal>Invoice in minutes.<br><em>Get paid</em> faster.</h1>
+    <p data-reveal>Stop wrestling with spreadsheets. Create beautiful, professional invoices and send them before your client forgets.</p>
+    <div class="hero-actions" data-reveal>
+      <a href="https://app.invoiceserve.co.za" class="btn-primary">Create your first invoice — free</a>
+      <a href="#how" class="btn-ghost">See how it works →</a>
+    </div>
+    <div class="hero-trust" data-reveal>
+      <div class="trust-item">✓ No credit card required</div>
+      <div class="trust-sep">·</div>
+      <div class="trust-item">✓ 20 invoices free</div>
+      <div class="trust-sep">·</div>
+      <div class="trust-item">✓ Setup in 2 minutes</div>
+    </div>
   </div>
-  <div class="hero-trust">
-    <div class="trust-item">✓ No credit card required</div>
-    <div class="trust-sep">·</div>
-    <div class="trust-item">✓ 20 invoices limit</div>
-    <div class="trust-sep">·</div>
-    <div class="trust-item">✓ Setup in under 2 minutes</div>
+  <div class="hero-visual" data-reveal>
+    <div class="mock-card">
+      <div class="mock-header">
+        <div class="mock-logo-area">
+          <div class="mock-logo-block"></div>
+          <div>
+            <div class="mock-company">Thabo Creative Co.</div>
+            <div class="mock-invoice-tag">INVOICE #0042</div>
+          </div>
+        </div>
+        <div class="mock-status-badge">✓ Paid</div>
+      </div>
+      <div class="mock-divider"></div>
+      <div class="mock-items">
+        <div class="mock-row">
+          <span>Logo Design Package</span>
+          <span class="mock-amount">R4,500</span>
+        </div>
+        <div class="mock-row">
+          <span>Brand Guidelines</span>
+          <span class="mock-amount">R2,000</span>
+        </div>
+        <div class="mock-row mock-vat">
+          <span>VAT (15%)</span>
+          <span class="mock-amount">R975</span>
+        </div>
+      </div>
+      <div class="mock-total-row">
+        <span>Total Due</span>
+        <span class="mock-total-amount">R7,475</span>
+      </div>
+    </div>
+    <div class="mock-notification">
+      <div class="mock-notif-icon">💰</div>
+      <div>
+        <div class="mock-notif-title">Payment received!</div>
+        <div class="mock-notif-sub">R7,475 · just now</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- SOCIAL PROOF BAR -->
-<div class="proof-bar">
-  <div class="proof-stat"><div class="proof-num">100+</div><div class="proof-label">Active users</div></div>
-  <div class="proof-stat"><div class="proof-num">42%</div><div class="proof-label">Faster average payment</div></div>
-  <div class="proof-stat"><div class="proof-num">4.8★</div><div class="proof-label">Average rating</div></div>
+<!-- STATS BAR -->
+<div class="proof-bar" data-reveal>
+  <div class="proof-stat">
+    <div class="proof-num" data-count="100" data-suffix="+">0+</div>
+    <div class="proof-label">Active users</div>
+  </div>
+  <div class="proof-stat">
+    <div class="proof-num" data-count="42" data-suffix="%">0%</div>
+    <div class="proof-label">Faster average payment</div>
+  </div>
+  <div class="proof-stat">
+    <div class="proof-num" data-count="4.8" data-suffix="★">0★</div>
+    <div class="proof-label">Average rating</div>
+  </div>
 </div>
 
 <!-- PROBLEM / BEFORE-AFTER -->
-<section class="problem">
+<section class="problem" data-reveal>
   <div class="problem-text">
     <h2>Chasing invoices is costing you more than time.</h2>
     <p>Freelancers and small businesses in SA lose an average of <strong>6 hours a month</strong> on invoicing admin — time that could be billable work.</p>
@@ -63,20 +129,318 @@
     </ul>
   </div>
   <div class="pain-card">
-    <p class="ba-title">Before vs. After</p>
+    <p class="ba-title">Before vs. After Invoiceserve</p>
     <div class="before-after">
       <div class="ba-row">
-        <div class="ba-box ba-before"><div class="ba-label">Before</div>Copy-paste Excel template, manually add tax, email as attachment, hope they pay.</div>
+        <div class="ba-box ba-before"><div class="ba-label">😩 Before</div>Copy-paste Excel template, manually add tax, email as attachment, hope they pay.</div>
       </div>
       <div class="ba-row">
-        <div class="ba-box ba-after"><div class="ba-label">After</div>Fill in client &amp; amount. One click sends a polished PDF. Automatic reminder if overdue.</div>
+        <div class="ba-box ba-after"><div class="ba-label">✨ After</div>Fill in client &amp; amount. One click sends a polished PDF. Automatic reminder if overdue.</div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how" data-reveal>
+  <div class="how-inner">
+    <div class="section-label">How it works</div>
+    <h2 class="section-title">Up and running in minutes</h2>
+    <p class="section-sub">No training, no spreadsheets, no chasing. Just invoices that get paid.</p>
+    <div class="steps">
+      <div class="step-item">
+        <div class="step-num">01</div>
+        <div class="step-icon">🧾</div>
+        <h3>Create your invoice</h3>
+        <p>Fill in client details and line items. SA VAT is auto-calculated. Takes under 90 seconds.</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step-item">
+        <div class="step-num">02</div>
+        <div class="step-icon">📧</div>
+        <h3>Send &amp; track</h3>
+        <p>Email a polished PDF instantly. Know the second your client opens it.</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step-item">
+        <div class="step-num">03</div>
+        <div class="step-icon">💳</div>
+        <h3>Get paid on time</h3>
+        <p>Automatic reminders chase late payments on your behalf. More money, less awkwardness.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO SHOWCASE -->
+<section class="demo-section" id="demo" data-reveal>
+  <div class="demo-inner">
+    <div class="section-label">See it in action</div>
+    <h2 class="section-title">The full journey, from first invoice to paid.</h2>
+    <p class="section-sub">Follow the complete workflow — from setting up your account to watching money land in your account.</p>
+
+    <!-- Phase tabs -->
+    <div class="demo-phases" role="tablist" aria-label="Demo phases">
+      <button class="demo-phase-btn active" role="tab" aria-selected="true" data-phase="user">
+        <span class="demo-phase-icon">🧑‍💻</span> Your workflow
+      </button>
+      <div class="demo-phase-divider">→</div>
+      <button class="demo-phase-btn" role="tab" aria-selected="false" data-phase="client">
+        <span class="demo-phase-icon">👤</span> Client experience
+      </button>
+      <div class="demo-phase-divider">→</div>
+      <button class="demo-phase-btn" role="tab" aria-selected="false" data-phase="confirm">
+        <span class="demo-phase-icon">✅</span> You get paid
+      </button>
+    </div>
+
+    <!-- Step pills -->
+    <div class="demo-steps" role="tablist" aria-label="Demo steps">
+      <button class="demo-step-pill active" data-step="0" aria-selected="true"><span class="demo-step-num">1</span><span class="demo-step-label">Payment details</span></button>
+      <button class="demo-step-pill" data-step="1" aria-selected="false"><span class="demo-step-num">2</span><span class="demo-step-label">Create invoice</span></button>
+      <button class="demo-step-pill" data-step="2" aria-selected="false"><span class="demo-step-num">3</span><span class="demo-step-label">See invoice</span></button>
+      <button class="demo-step-pill" data-step="3" aria-selected="false"><span class="demo-step-num">4</span><span class="demo-step-label">Send invoice</span></button>
+      <button class="demo-step-pill" data-step="4" aria-selected="false"><span class="demo-step-num">5</span><span class="demo-step-label">Client email</span></button>
+      <button class="demo-step-pill" data-step="5" aria-selected="false"><span class="demo-step-num">6</span><span class="demo-step-label">Client portal</span></button>
+      <button class="demo-step-pill" data-step="7" aria-selected="false"><span class="demo-step-num">8</span><span class="demo-step-label">Confirmation</span></button>
+    </div>
+
+    <!-- Screenshot viewer -->
+    <div class="demo-viewer" id="demo-viewer" tabindex="0" aria-label="Step screenshots, use arrow keys to navigate">
+
+      <!-- Step 0 — Payment details -->
+      <div class="demo-slide active" data-slide="0">
+        <div class="demo-slide-inner">
+          <div class="demo-screen-wrap">
+            <div class="demo-browser-bar">
+              <div class="demo-browser-dots"><span></span><span></span><span></span></div>
+              <div class="demo-browser-url">app.invoiceserve.co.za</div>
+            </div>
+            <div class="demo-screen">
+              <img src="screenshots/settings.png" alt="Setting up payment details in Invoiceserve" loading="lazy">
+              <div class="demo-placeholder">
+                <div class="demo-placeholder-icon">💳</div>
+                <div class="demo-placeholder-title">Screenshot coming soon</div>
+                <div class="demo-placeholder-hint">Add <code>screenshots/settings.png</code></div>
+              </div>
+            </div>
+          </div>
+          <div class="demo-slide-info">
+            <div class="demo-slide-phase-tag user-tag">Your workflow · Step 1 of 4</div>
+            <h3>Set up your payment details</h3>
+            <p>Enter your bank account details once. Every invoice you create will automatically include your payment information — no copy-pasting ever again.</p>
+            <ul class="demo-slide-perks">
+              <li>✓ South African bank accounts supported</li>
+              <li>✓ Secure, encrypted storage</li>
+              <li>✓ Shown on every invoice automatically</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 1 — Create invoice -->
+      <div class="demo-slide" data-slide="1">
+        <div class="demo-slide-inner">
+          <div class="demo-screen-wrap">
+            <div class="demo-browser-bar">
+              <div class="demo-browser-dots"><span></span><span></span><span></span></div>
+              <div class="demo-browser-url">app.invoiceserve.co.za</div>
+            </div>
+            <div class="demo-screen">
+              <img src="screenshots/create-invoice.png" alt="Creating a new invoice in Invoiceserve" loading="lazy">
+              <div class="demo-placeholder">
+                <div class="demo-placeholder-icon">🧾</div>
+                <div class="demo-placeholder-title">Screenshot coming soon</div>
+                <div class="demo-placeholder-hint">Add <code>screenshots/02-create-invoice.png</code></div>
+              </div>
+            </div>
+          </div>
+          <div class="demo-slide-info">
+            <div class="demo-slide-phase-tag user-tag">Your workflow · Step 2 of 4</div>
+            <h3>Create your invoice in 90 seconds</h3>
+            <p>Add your client, fill in your line items, and SA VAT is calculated automatically. Pick a template and your invoice is ready to send.</p>
+            <ul class="demo-slide-perks">
+              <li>✓ Auto-calculated 15% SA VAT</li>
+              <li>✓ Save clients for future invoices</li>
+              <li>✓ Professional templates included</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 — See invoice -->
+      <div class="demo-slide" data-slide="2">
+        <div class="demo-slide-inner">
+          <div class="demo-screen-wrap">
+            <div class="demo-browser-bar">
+              <div class="demo-browser-dots"><span></span><span></span><span></span></div>
+              <div class="demo-browser-url">app.invoiceserve.co.za</div>
+            </div>
+            <div class="demo-screen">
+              <img src="screenshots/view-invoice.png" alt="Previewing an invoice in Invoiceserve" loading="lazy">
+              <div class="demo-placeholder">
+                <div class="demo-placeholder-icon">👁️</div>
+                <div class="demo-placeholder-title">Screenshot coming soon</div>
+                <div class="demo-placeholder-hint">Add <code>screenshots/03-see-invoice.png</code></div>
+              </div>
+            </div>
+          </div>
+          <div class="demo-slide-info">
+            <div class="demo-slide-phase-tag user-tag">Your workflow · Step 3 of 4</div>
+            <h3>Review your invoice before sending</h3>
+            <p>See exactly what your client will receive. Check line items, totals, and your branding — make any last edits before you hit send.</p>
+            <ul class="demo-slide-perks">
+              <li>✓ Full PDF preview in the browser</li>
+              <li>✓ Edit any detail before sending</li>
+              <li>✓ Looks great on any device</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 — Send invoice -->
+      <div class="demo-slide" data-slide="3">
+        <div class="demo-slide-inner">
+          <div class="demo-screen-wrap">
+            <div class="demo-browser-bar">
+              <div class="demo-browser-dots"><span></span><span></span><span></span></div>
+              <div class="demo-browser-url">app.invoiceserve.co.za</div>
+            </div>
+            <div class="demo-screen">
+              <img src="screenshots/send-invoice.png" alt="Sending an invoice from Invoiceserve" loading="lazy">
+              <div class="demo-placeholder">
+                <div class="demo-placeholder-icon">📧</div>
+                <div class="demo-placeholder-title">Screenshot coming soon</div>
+                <div class="demo-placeholder-hint">Add <code>screenshots/send-invoice.png</code></div>
+              </div>
+            </div>
+          </div>
+          <div class="demo-slide-info">
+            <div class="demo-slide-phase-tag user-tag">Your workflow · Step 4 of 4</div>
+            <h3>Send with one click</h3>
+            <p>Email a polished, branded PDF to your client instantly. You'll know the moment they open it — no more wondering if it arrived.</p>
+            <ul class="demo-slide-perks">
+              <li>✓ Branded email with your logo</li>
+              <li>✓ Read receipts &amp; open tracking</li>
+              <li>✓ Automatic overdue reminders</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 — Client email -->
+      <div class="demo-slide" data-slide="4">
+        <div class="demo-slide-inner">
+          <div class="demo-screen-wrap">
+            <div class="demo-browser-bar">
+              <div class="demo-browser-dots"><span></span><span></span><span></span></div>
+              <div class="demo-browser-url">Inbox — Invoice from Thabo Creative Co.</div>
+            </div>
+            <div class="demo-screen">
+              <img src="screenshots/invoice-mail.png" alt="Client receiving the invoice email" loading="lazy">
+              <div class="demo-placeholder">
+                <div class="demo-placeholder-icon">📨</div>
+                <div class="demo-placeholder-title">Screenshot coming soon</div>
+                <div class="demo-placeholder-hint">Add <code>screenshots/05-client-email.png</code></div>
+              </div>
+            </div>
+          </div>
+          <div class="demo-slide-info">
+            <div class="demo-slide-phase-tag client-tag">Client experience · Step 1 of 3</div>
+            <h3>Client receives a professional email</h3>
+            <p>Your client gets a clean, branded email with the invoice PDF attached and a clear link to the payment portal. First impressions matter.</p>
+            <ul class="demo-slide-perks">
+              <li>✓ Your branding front and centre</li>
+              <li>✓ PDF attached for their records</li>
+              <li>✓ Clear "View &amp; Pay" button</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5 — Client portal -->
+      <div class="demo-slide" data-slide="5">
+        <div class="demo-slide-inner">
+          <div class="demo-screen-wrap">
+            <div class="demo-browser-bar">
+              <div class="demo-browser-dots"><span></span><span></span><span></span></div>
+              <div class="demo-browser-url">portal.invoiceserve.co.za</div>
+            </div>
+            <div class="demo-screen">
+              <img src="screenshots/client-portal.png" alt="Client viewing the invoice in the portal" loading="lazy">
+              <div class="demo-placeholder">
+                <div class="demo-placeholder-icon">🖥️</div>
+                <div class="demo-placeholder-title">Screenshot coming soon</div>
+                <div class="demo-placeholder-hint">Add <code>screenshots/client-portal.png</code></div>
+              </div>
+            </div>
+          </div>
+          <div class="demo-slide-info">
+            <div class="demo-slide-phase-tag client-tag">Client experience · Step 2 of 3</div>
+            <h3>Client opens the secure portal</h3>
+            <p>Your client views the full invoice in a clean, professional portal — no login required. Line items, due dates, and payment instructions all visible at a glance.</p>
+            <ul class="demo-slide-perks">
+              <li>✓ No client account needed</li>
+              <li>✓ Full invoice details visible</li>
+              <li>✓ View all outstanding invoices</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 6 — Payment confirmation -->
+      <div class="demo-slide" data-slide="6">
+        <div class="demo-slide-inner">
+          <div class="demo-screen-wrap">
+            <div class="demo-browser-bar">
+              <div class="demo-browser-dots"><span></span><span></span><span></span></div>
+              <div class="demo-browser-url">app.invoiceserve.co.za</div>
+            </div>
+            <div class="demo-screen">
+              <img src="screenshots/paid-invoice.png" alt="Payment confirmation on the Invoiceserve dashboard" loading="lazy">
+              <div class="demo-placeholder">
+                <div class="demo-placeholder-icon">🎉</div>
+                <div class="demo-placeholder-title">Screenshot coming soon</div>
+                <div class="demo-placeholder-hint">Add <code>screenshots/paid-invoice.png</code></div>
+              </div>
+            </div>
+          </div>
+          <div class="demo-slide-info">
+            <div class="demo-slide-phase-tag confirm-tag">You get paid · Final step</div>
+            <h3>You receive payment confirmation</h3>
+            <p>The moment payment is made, you get notified. Your dashboard updates instantly — invoice marked paid, cash flow updated. No chasing required.</p>
+            <ul class="demo-slide-perks">
+              <li>✓ Instant email &amp; in-app notification</li>
+              <li>✓ Dashboard updates in real time</li>
+              <li>✓ Invoice archived automatically</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /demo-viewer -->
+
+    <!-- Prev / Next controls -->
+    <div class="demo-controls">
+      <button class="demo-ctrl-btn" id="demo-prev" aria-label="Previous step" disabled>← Prev</button>
+      <div class="demo-progress-dots" aria-hidden="true">
+        <span class="demo-dot active" data-dot="0"></span>
+        <span class="demo-dot" data-dot="1"></span>
+        <span class="demo-dot" data-dot="2"></span>
+        <span class="demo-dot" data-dot="3"></span>
+        <span class="demo-dot" data-dot="4"></span>
+        <span class="demo-dot" data-dot="5"></span>
+        <span class="demo-dot" data-dot="6"></span>
+        <span class="demo-dot" data-dot="7"></span>
+      </div>
+      <button class="demo-ctrl-btn demo-ctrl-next" id="demo-next" aria-label="Next step">Next →</button>
+    </div>
+
+  </div>
+</section>
+
 <!-- FEATURES -->
-<section class="features" id="features">
+<section class="features" id="features" data-reveal>
   <div class="features-inner">
     <div class="section-label">Why Invoiceserve</div>
     <h2 class="section-title">Everything you need.<br>Nothing you don't.</h2>
@@ -109,20 +473,20 @@
       </div>
       <div class="feat-card">
         <div class="feat-icon">🔐</div>
-        <h3>Client Portal for invoices &amp; payments</h3>
-        <p>Give clients a secure portal to log in, view invoices, check payment status and history, and manage or pay outstanding invoices in one place.</p>
+        <h3>Client Portal</h3>
+        <p>Give clients a secure portal to view invoices, check payment status, and manage or pay outstanding balances.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon">🇿🇦</div>
         <h3>Built for South Africa</h3>
-        <p>ZAR currency, South African VAT (15%) built in, and pricing that makes sense locally — R100, not $30.</p>
+        <p>ZAR currency, 15% SA VAT built in, and pricing that makes sense locally — R100, not $30.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="testi">
+<section class="testi" data-reveal>
   <div class="section-label">Customer love</div>
   <h2 class="section-title testi-title">Real freelancers. Real results.</h2>
   <div class="testi-grid">
@@ -154,7 +518,7 @@
 </section>
 
 <!-- PRICING -->
-<section class="pricing-section" id="pricing">
+<section class="pricing-section" id="pricing" data-reveal>
   <div class="pricing-inner">
     <div class="pricing-header">
       <div class="section-label">Pricing</div>
@@ -166,7 +530,7 @@
       <div class="price-card">
         <div class="plan-name">Free</div>
         <div class="plan-price"><sup>R</sup>0</div>
-        <div class="plan-period">forever</div>
+        <div class="plan-period">forever — no card needed</div>
         <ul class="plan-features">
           <li><div class="fi fi-purple">✓</div>20 invoices on the system</li>
           <li><div class="fi fi-purple">✓</div>Up to 5 clients</li>
@@ -199,7 +563,7 @@
 </section>
 
 <!-- FAQ -->
-<section class="faq" id="faq">
+<section class="faq" id="faq" data-reveal>
   <div style="text-align:center">
     <div class="section-label">FAQ</div>
     <h2 class="faq-title">Common questions</h2>
@@ -221,23 +585,62 @@
       <div class="faq-q">How do the automatic reminders work? <span class="faq-toggle">+</span></div>
       <div class="faq-a">Once an invoice is overdue, Invoiceserve automatically sends a polite follow-up to your client on your behalf.</div>
     </div>
+    <div class="faq-item">
+      <div class="faq-q">Is my data safe and secure? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">Absolutely. All data is encrypted in transit and at rest. We never share your client information with anyone, ever.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" data-reveal>
+  <div class="final-cta-inner">
+    <h2>Ready to stop chasing invoices?</h2>
+    <p>Join 100+ South African freelancers who invoice in minutes and get paid faster.</p>
+    <a href="https://app.invoiceserve.co.za" class="btn-primary btn-hero-cta">Create your first invoice — free</a>
+    <div class="hero-trust" style="justify-content:center;margin-top:1rem">
+      <div class="trust-item">✓ No credit card</div>
+      <div class="trust-sep">·</div>
+      <div class="trust-item">✓ Free plan forever</div>
+      <div class="trust-sep">·</div>
+      <div class="trust-item">✓ Cancel anytime</div>
+    </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Invoice<span>serve</span></div>
-  <div class="footer-links">
-    <a href="#">About</a>
-    <a href="#">Privacy</a>
-    <a href="#">Terms</a>
-    <a href="#">Support</a>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Invoice<span>serve</span></div>
+      <p class="footer-tagline">Invoice in minutes. Get paid faster.</p>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-col">
+        <div class="footer-col-title">Product</div>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="#">About</a>
+        <a href="#">Support</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Legal</div>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
   </div>
-  <div class="footer-copy">© <span id="year"></span> Invoiceserve. All rights reserved.</div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© <span id="year"></span> Invoiceserve. Made with ❤️ in South Africa.</div>
+  </div>
 </footer>
 
 <!-- Toast -->
-<div id="toast" class="toast"></div>
+<div id="toast" class="toast" role="alert" aria-live="polite"></div>
 
 <script src="main.js" defer></script>
 </body>
