@@ -100,11 +100,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Demo showcase stepper
   (function () {
-    const TOTAL = 8;
+    const TOTAL = 7;
     const PHASE_MAP = [
       { phase: 'user',    steps: [0, 1, 2, 3] },
-      { phase: 'client',  steps: [4, 5, 6]    },
-      { phase: 'confirm', steps: [7]           },
+      { phase: 'client',  steps: [4, 5]    },
+      { phase: 'confirm', steps: [6]           },
     ];
 
     let current = 0;
