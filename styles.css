@@ -789,6 +789,17 @@ blockquote {
   font-weight: 700;
   letter-spacing: 0.03em;
 }
+.free-trial-banner {
+  display: inline-block;
+  margin-top: 0.6rem;
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.3rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
 .plan-name {
   font-size: 0.8rem;
   font-weight: 700;
