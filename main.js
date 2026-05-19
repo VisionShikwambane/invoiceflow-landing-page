@@ -57,6 +57,30 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => el.classList.add('revealed'));
   }
 
+  // ── Pointer-reactive highlights for premium surfaces
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion) {
+    const reactiveEls = document.querySelectorAll('.mock-card, .proof-bar, .price-card-featured, .demo-screen-wrap');
+    reactiveEls.forEach(el => {
+      const reset = () => {
+        el.style.setProperty('--pointer-x', '0.5');
+        el.style.setProperty('--pointer-y', '0.5');
+      };
+
+      reset();
+
+      el.addEventListener('pointermove', e => {
+        const rect = el.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;
+        const y = (e.clientY - rect.top) / rect.height;
+        el.style.setProperty('--pointer-x', x.toFixed(3));
+        el.style.setProperty('--pointer-y', y.toFixed(3));
+      });
+
+      el.addEventListener('pointerleave', reset);
+    });
+  }
+
   // ── Animated number counters
   const counters = document.querySelectorAll('[data-count]');
   if ('IntersectionObserver' in window && counters.length) {
