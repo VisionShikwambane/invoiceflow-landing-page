@@ -1426,3 +1426,199 @@ footer {
   .how-inner { padding: 2rem 1.25rem; }
   .pricing-grid { max-width: 100%; }
 }
+/* ═══════════════════════════════════════════════════════
+   PREMIUM REDESIGN — visual uplift, no content changes
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Hero: dot-grid texture + staggered reveals ───────── */
+.hero { position: relative; overflow: hidden; }
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(20,184,166,0.12) 1.5px, transparent 1.5px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 0;
+  -webkit-mask-image: radial-gradient(ellipse 70% 80% at 18% 50%, black 0%, transparent 75%);
+  mask-image: radial-gradient(ellipse 70% 80% at 18% 50%, black 0%, transparent 75%);
+}
+.hero-content { position: relative; z-index: 1; }
+.hero-visual  { position: relative; z-index: 1; }
+
+/* Staggered entry delays for each hero element */
+.hero-badge[data-reveal]   { transition-delay: 0s;     }
+.hero h1[data-reveal]      { transition-delay: 0.10s;  }
+.hero p[data-reveal]       { transition-delay: 0.20s;  }
+.hero-actions[data-reveal] { transition-delay: 0.30s;  }
+.hero-visual[data-reveal]  { transition-delay: 0.14s;  }
+
+/* ── Stats bar: premium tinted gradient ───────────────── */
+.proof-bar {
+  background: linear-gradient(135deg, var(--primary-softer) 0%, var(--surface) 100%);
+}
+
+/* ── Problem: dark left panel (first visual break) ────── */
+.problem-text {
+  background: #0c1a2e;
+  border-color: rgba(255,255,255,0.06);
+  box-shadow: 0 24px 56px rgba(12,26,46,0.40);
+}
+.problem-text h2          { color: #f8fafc; }
+.problem-text > p         { color: rgba(226,232,240,0.72); }
+.problem-text .pain-list li { color: rgba(226,232,240,0.82); }
+.problem-text .pain-icon  {
+  background: rgba(252,165,165,0.16);
+  color: #fca5a5;
+}
+
+/* ── How it works: editorial oversized step numbers ───── */
+.step-num {
+  font-size: 3.75rem;
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  text-transform: none;
+  line-height: 0.9;
+  opacity: 0.13;
+  margin-bottom: 0.85rem;
+}
+/* realign arrow to new icon vertical position */
+.step-arrow { padding-top: 5.5rem; }
+
+/* subtle teal left accent on the section card */
+.how-inner {
+  background: linear-gradient(160deg, rgba(240,253,250,0.55) 0%, #fff 45%);
+  border-left-color: var(--primary);
+  border-left-width: 3px;
+}
+
+/* ── Section labels: colour variety (not all identical) ─ */
+.features .section-label {
+  color: #6d28d9;
+  background: #ede9fe;
+  border-color: #c4b5fd;
+}
+.testi .section-label {
+  color: #b45309;
+  background: #fef3c7;
+  border-color: #fde68a;
+}
+.faq .section-label {
+  color: #0369a1;
+  background: #e0f2fe;
+  border-color: #bae6fd;
+}
+
+/* ── Features: 6-column bento grid ───────────────────── */
+.features-inner { text-align: center; }
+.feat-grid { grid-template-columns: repeat(6, 1fr); }
+
+.feat-card:nth-child(1) { grid-column: span 4; }
+.feat-card:nth-child(2) { grid-column: span 2; }
+.feat-card:nth-child(3) { grid-column: span 2; }
+.feat-card:nth-child(4) { grid-column: span 2; }
+.feat-card:nth-child(5) { grid-column: span 2; }
+.feat-card:nth-child(6) { grid-column: span 3; }
+.feat-card:nth-child(7) { grid-column: span 3; }
+
+/* SA card — branded teal accent */
+.feat-card:nth-child(7) {
+  background: linear-gradient(135deg, var(--primary-soft) 0%, #fff 80%);
+  border-color: rgba(20,184,166,0.32);
+}
+
+/* Slightly more presence on the hero bento card */
+.feat-card:nth-child(1) { padding: 1.75rem; }
+.feat-card:nth-child(1) .feat-icon {
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.3rem;
+}
+.feat-card:nth-child(1) h3 { font-size: 1.1rem; }
+
+/* ── Testimonials: full-width featured first quote ────── */
+.testi-grid { grid-template-columns: repeat(2, 1fr); }
+
+.testi-card:first-child {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, var(--primary-soft) 0%, rgba(255,255,255,0.45) 100%);
+  border-color: rgba(20,184,166,0.28);
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  grid-template-rows: auto auto;
+  column-gap: 3rem;
+  row-gap: 0.35rem;
+  align-items: start;
+  padding: 2rem 2.25rem;
+}
+.testi-card:first-child .stars     { grid-column: 1; grid-row: 1; font-size: 1.1rem; }
+.testi-card:first-child blockquote {
+  grid-column: 1;
+  grid-row: 2;
+  font-size: 1.22rem;
+  line-height: 1.6;
+  color: var(--text);
+  margin-top: 0.45rem;
+}
+.testi-card:first-child .testi-author {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  align-self: center;
+  border-left: 1px solid rgba(20,184,166,0.22);
+  padding-left: 2rem;
+  margin-top: 0;
+}
+
+/* ── Final CTA: deep-dark section (second visual break) ─ */
+.final-cta {
+  background: #0c1a2e;
+  border-color: rgba(20,184,166,0.2);
+}
+.final-cta::before {
+  background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(20,184,166,0.14), transparent);
+}
+.final-cta h2            { color: #f8fafc; }
+.final-cta p             { color: rgba(226,232,240,0.68); }
+.final-cta .trust-item   { color: rgba(226,232,240,0.55); }
+.final-cta .trust-sep    { color: rgba(226,232,240,0.28); opacity: 1; }
+
+/* ── Responsive resets ───────────────────────────────── */
+@media (max-width: 980px) {
+  /* bento → equal 2-col at tablet */
+  .feat-grid { grid-template-columns: repeat(2, 1fr); }
+  .feat-card:nth-child(n) { grid-column: span 1; }
+
+  /* keep step arrow reset */
+  .step-arrow { padding-top: 0; }
+
+  /* collapse featured testimonial to single column */
+  .testi-card:first-child {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 0.75rem;
+    padding: 1.5rem;
+  }
+  .testi-card:first-child .stars     { grid-column: 1; grid-row: auto; }
+  .testi-card:first-child blockquote { grid-column: 1; grid-row: auto; font-size: 1.05rem; }
+  .testi-card:first-child .testi-author {
+    grid-column: 1;
+    grid-row: auto;
+    border-left: none;
+    border-top: 1px solid rgba(20,184,166,0.2);
+    padding-left: 0;
+    padding-top: 1rem;
+    margin-top: 0.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  /* bento → single col on mobile */
+  .feat-grid { grid-template-columns: 1fr; }
+  .feat-card:nth-child(n) { grid-column: span 1; }
+
+  /* testi-grid already becomes 1fr; featured card full-width is natural */
+  .testi-card:first-child { grid-column: span 1; }
+
+  /* tone down large step numbers on narrow screens */
+  .step-num { font-size: 2.5rem; }
+}
