@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── Pointer-reactive highlights for premium surfaces
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!reduceMotion) {
-    const reactiveEls = document.querySelectorAll('.mock-card, .proof-bar, .price-card-featured, .demo-screen-wrap');
+    const reactiveEls = document.querySelectorAll('.proof-bar, .price-card-featured, .demo-screen-wrap');
     reactiveEls.forEach(el => {
       const reset = () => {
         el.style.setProperty('--pointer-x', '0.5');
