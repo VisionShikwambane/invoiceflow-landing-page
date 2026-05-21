@@ -41,52 +41,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Scroll-reveal via IntersectionObserver
-  const revealEls = document.querySelectorAll('[data-reveal]');
-  if ('IntersectionObserver' in window && revealEls.length) {
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    revealEls.forEach(el => obs.observe(el));
-  } else {
-    revealEls.forEach(el => el.classList.add('revealed'));
-  }
+  // ── Show all reveal elements immediately (no animation)
+  document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('revealed'));
 
-  // ── Animated number counters
-  const counters = document.querySelectorAll('[data-count]');
-  if ('IntersectionObserver' in window && counters.length) {
-    const counterObs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const el = entry.target;
-        const target = parseFloat(el.dataset.count);
-        const suffix = el.dataset.suffix || '';
-        const prefix = el.dataset.prefix || '';
-        const duration = 1800;
-        const isDecimal = !Number.isInteger(target);
-        const startTime = performance.now();
-
-        const tick = (now) => {
-          const elapsed = now - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          // easeOutExpo curve
-          const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-          const val = eased * target;
-          el.textContent = prefix + (isDecimal ? val.toFixed(1) : Math.round(val)) + suffix;
-          if (progress < 1) requestAnimationFrame(tick);
-        };
-
-        requestAnimationFrame(tick);
-        counterObs.unobserve(el);
-      });
-    }, { threshold: 0.5 });
-    counters.forEach(el => counterObs.observe(el));
-  }
+  // ── Number counters: show final values immediately
+  document.querySelectorAll('[data-count]').forEach(el => {
+    const target = parseFloat(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    const prefix = el.dataset.prefix || '';
+    const isDecimal = !Number.isInteger(target);
+    el.textContent = prefix + (isDecimal ? target.toFixed(1) : target) + suffix;
+  });
 
   // ── FAQ accordion (one open at a time)
   document.querySelectorAll('.faq-q').forEach(q => {
